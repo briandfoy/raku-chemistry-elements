@@ -13,7 +13,8 @@
 	"source": "git@github.com:briandfoy/perl6-chemistry-elements.git"
 	},
 "test-depends": [
-	"Test"
+	"Test",
+	"Test::Meta"
 	],
 "version": "1.001001"
 }
