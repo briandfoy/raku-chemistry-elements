@@ -123,6 +123,6 @@ class Chemistry::Elements {
 		);
 
 	method get_name_by_Z ( $Z ) {
-		say %names{$Z}[*-1];
+		%names{$Z}[*-1];
 		}
 	}
