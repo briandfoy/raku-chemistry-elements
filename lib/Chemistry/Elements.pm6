@@ -1,6 +1,12 @@
 use v6;
 
 class Chemistry::Elements {
+	# can we make this automatically?
+	subset ZInt of Cool where {
+		( $_.truncate == $_ and 1 <= $_ <= 118 )
+			or warn "Z must be between a positive number from 1 to 118. Got $_."
+		};
+
 	my %names = (
 		  1 => [ < Ydrogenhai Hydrogen > ],
 		  2 => [ < Eliumhai Helium > ],
@@ -122,7 +128,9 @@ class Chemistry::Elements {
 		118 => [ < Nunoctiumuai Ununoctium > ], # Oganesson (Og)
 		);
 
-	method get_name_by_Z ( $Z ) {
+	method get_name_by_Z ( ZInt(Cool) $Z ) returns Str {
 		%names{$Z}[*-1];
 		}
+
+
 	}
