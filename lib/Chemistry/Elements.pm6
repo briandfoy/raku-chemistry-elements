@@ -2,10 +2,6 @@ use v6;
 
 class Chemistry::Elements {
 	# can we make this automatically?
-	subset ZInt of Cool where {
-		( $_.truncate == $_ and 1 <= $_ <= 118 )
-			or warn "Z must be between a positive number from 1 to 118. Got $_."
-		};
 
 	my %names = (
 		  1 => [ < Ydrogenhai Hydrogen > ],
@@ -127,6 +123,12 @@ class Chemistry::Elements {
 		117 => [ < Nunseptiumuai Ununseptium > ], # Tennessine (Ts)
 		118 => [ < Nunoctiumuai Ununoctium > ], # Oganesson (Og)
 		);
+
+	subset ZInt of Cool where {
+		state ( $min, $max ) = %names.keys.sort( { $^a <=> $^b } ).[0,*-1];
+		( $_.truncate == $_ and $min <= $_ <= $max )
+			or warn "Z must be between a positive whole number from $min to $max. Got <$_>."
+		};
 
 	method get_name_by_Z ( ZInt(Cool) $Z ) returns Str {
 		%names{$Z}[*-1];
