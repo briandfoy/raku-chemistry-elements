@@ -124,7 +124,7 @@ class Chemistry::Elements {
 		118 => [ < Nunoctiumuai Ununoctium > ],   # Oganesson (Og)
 		);
 
-	subset ZInt of Cool where {
+	subset ZInt of Cool is export where {
 		state ( $min, $max ) = %names.keys.sort( { $^a <=> $^b } ).[0,*-1];
 		( $_.truncate == $_ and $min <= $_ <= $max )
 			or warn "Z must be between a positive whole number from $min to $max. Got <$_>."
@@ -142,7 +142,7 @@ class Chemistry::Elements {
 		==> map( { state $n = 0; $n++; $_.Str => item $n } )
 		==> my %symbol_to_name;
 
-	subset ChemicalSymbol of Str where {
+	subset ChemicalSymbol of Str is export where {
 		%symbol_to_name{$_}:exists or warn "<$_> is not a recognized chemical symbol";
 		};
 
