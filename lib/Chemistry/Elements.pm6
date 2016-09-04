@@ -116,12 +116,12 @@ class Chemistry::Elements {
 		110 => [ < Armstadtiumdai Darmstadtium > ],
 		111 => [ < Oentgeniumrai Roentgenium > ],
 		112 => [ < Operniciumcai Copernicium > ],
-		113 => [ < Nuntriumuai Ununtrium > ],  # Nihonium (Nh)
+		113 => [ < Nuntriumuai Ununtrium > ],     # Nihonium (Nh)
 		114 => [ < Leroviumfai Flerovium > ],
 		115 => [ < Nunpentiumuai Ununpentium > ], # Moscovium (Mc)
 		116 => [ < Ivermoriumlai Livermorium > ],
 		117 => [ < Nunseptiumuai Ununseptium > ], # Tennessine (Ts)
-		118 => [ < Nunoctiumuai Ununoctium > ], # Oganesson (Og)
+		118 => [ < Nunoctiumuai Ununoctium > ],   # Oganesson (Og)
 		);
 
 	subset ZInt of Cool where {
