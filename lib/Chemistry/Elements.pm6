@@ -166,10 +166,15 @@ class Chemistry::Elements {
 	method get_symbol_by_Z ( ZInt(Cool) $Z ) returns ChemicalSymbol {
 		@elements[$Z - 1].Str;
 		}
+	method get_symbol_by_name ( Str $name ) returns ChemicalSymbol {
+		die "get_symbol_by_name not yet implemented";
+		}
 
 	method get_Z_by_symbol ( ChemicalSymbol $symbol ) returns ZInt {
 		%symbol_to_name{$symbol}:exists ?? %symbol_to_name{$symbol} !! die;
 		}
+	method get_Z_by_name ( Str $name ) returns ZInt {
+		die "get_Z_by_name not yet implemented";
 		}
 
 	}
