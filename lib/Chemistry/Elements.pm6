@@ -130,6 +130,16 @@ class Chemistry::Elements {
 			or warn "Z must be between a positive whole number from $min to $max. Got <$_>."
 		};
 
+	method max_Z () returns ZInt {
+		state $max = %names.keys.sort( { $^b <=> $^a } ).[0];
+		$max;
+		}
+
+	method min_Z () returns ZInt {
+		state $min = %names.keys.sort( { $^a <=> $^b } ).[0];
+		$min;
+		}
+
 	my @elements = <
 	H                                                                                                He
 	Li Be                                                                           B  C   N  O   F  Ne
