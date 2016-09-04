@@ -160,7 +160,7 @@ class Chemistry::Elements {
 		%names{$Z}[*-1];
 		}
 
-	method get_symbol_by_Z ( ZInt(Cool) $Z ) returns Str {
+	method get_symbol_by_Z ( ZInt(Cool) $Z ) returns ChemicalSymbol {
 		@elements[$Z - 1].Str;
 		}
 
