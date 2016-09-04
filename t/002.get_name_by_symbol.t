@@ -1,7 +1,7 @@
 use v6;
 use Test;
 
-plan 4;
+plan 6;
 
 my $package = 'Chemistry::Elements';
 my $method  = 'get_name_by_symbol';
