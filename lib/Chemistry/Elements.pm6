@@ -159,6 +159,9 @@ class Chemistry::Elements {
 	method get_name_by_Z ( ZInt(Cool) $Z ) returns Str {
 		%names{$Z}[*-1];
 		}
+	method get_name_by_symbol ( ChemicalSymbol $symbol ) returns Str {
+		self.get_name_by_Z( self.get_Z_by_symbol( $symbol ) );
+		}
 
 	method get_symbol_by_Z ( ZInt(Cool) $Z ) returns ChemicalSymbol {
 		@elements[$Z - 1].Str;
@@ -167,9 +170,6 @@ class Chemistry::Elements {
 	method get_Z_by_symbol ( ChemicalSymbol $symbol ) returns ZInt {
 		%symbol_to_name{$symbol}:exists ?? %symbol_to_name{$symbol} !! die;
 		}
-
-	method get_name_by_symbol ( ChemicalSymbol $symbol ) returns Str {
-		self.get_name_by_Z( self.get_Z_by_symbol( $symbol ) );
 		}
 
 	}
