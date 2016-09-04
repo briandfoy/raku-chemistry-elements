@@ -139,7 +139,7 @@ class Chemistry::Elements {
 	Cs Ba La Ce Pr Nd Pm Sm Eu Gd Tb Dy Ho Er Tm Yb Lu Hf Ta W  Re Os Ir Pt Au Hg  Tl Pb  Bi Po  At  Rn
 	Fr Ra Ac Th Pa U  Np Pu Am Cm Bk Cf Es Fm Md No Lr Rf Ha Sg Bh Hs Mt Ds Rg Cn Uut Fl Uup Lv Uus Uuo
 	>
-		==> map( { state $n = 0; $n++; $_.Str, $n } )
+		==> map( { state $n = 0; $n++; $_.Str => item $n } )
 		==> my %symbol_to_name;
 
 	subset ChemicalSymbol of Str where {
