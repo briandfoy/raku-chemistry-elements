@@ -18,11 +18,11 @@ my $callable = $class.^find_method( $method );
 
 is
 	$class."$method"(82), 'Pb',
-	'Z=37 is Rubidium';
+	'Z=82 is Pb (Lead)';
 
 is
 	$class.$callable(2), 'He',
-	'Z=1 is Hydrogen';
+	'Z=2 is He (Helium)';
 
 lives-ok { for 1..118 -> $Z { $class."$method"($Z) } },
 	'Z is valid for 1 to 118';
