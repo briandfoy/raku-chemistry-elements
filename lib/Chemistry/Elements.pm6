@@ -167,7 +167,7 @@ class Chemistry::Elements {
 		@elements[$Z - 1].Str;
 		}
 	method get_symbol_by_name ( Str $name ) returns ChemicalSymbol {
-		die "get_symbol_by_name not yet implemented";
+		self.get_symbol_by_Z( self.get_Z_by_name( $name ) );
 		}
 
 	method get_Z_by_symbol ( ChemicalSymbol $symbol ) returns ZInt {
