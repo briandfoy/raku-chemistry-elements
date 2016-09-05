@@ -15,7 +15,7 @@
 	},
 "test-depends": [
 	"Test",
-	"Test::Meta"
+	"Test::META"
 	],
 "version": "0.001001"
 }
