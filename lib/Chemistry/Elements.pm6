@@ -1,6 +1,7 @@
 use v6;
 
 class Chemistry::Elements {
+	# names has Pig Latin, English (so far)
 	my %names = (
 		  1 => [ < Ydrogenhai Hydrogen > ],
 		  2 => [ < Eliumhai Helium > ],
