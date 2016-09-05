@@ -151,6 +151,9 @@ class Chemistry::Elements {
 		==> map( { state $n = 0; $n++; $_.Str => item $n } )
 		==> my %symbol_to_name;
 
+	# I could perhaps use Z=> above
+	# http://stackoverflow.com/questions/39307797/can-i-return-multiple-pairs-from-a-map-feeding-into-a-hash
+
 	subset ChemicalSymbol of Str is export where {
 		%symbol_to_name{$_}:exists or warn "<$_> is not a recognized chemical symbol";
 		};
