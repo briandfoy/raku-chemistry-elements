@@ -1,8 +1,6 @@
 use v6;
 
 class Chemistry::Elements {
-	# can we make this automatically?
-
 	my %names = (
 		  1 => [ < Ydrogenhai Hydrogen > ],
 		  2 => [ < Eliumhai Helium > ],
