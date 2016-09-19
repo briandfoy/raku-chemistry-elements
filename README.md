@@ -1,4 +1,4 @@
-![](https://travis-ci.org/briandfoy/perl6-chemistry-elements.svg?branch=master)
+[![](https://travis-ci.org/briandfoy/perl6-chemistry-elements.svg?branch=master)](https://travis-ci.org/briandfoy/perl6-chemistry-elements)
 
 # The Chemistry::Elements Perl 6 module
 
