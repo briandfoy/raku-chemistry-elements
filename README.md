@@ -14,9 +14,9 @@ About the only thing you can't do is pretend that you wrote code that you didn't
 
 ## Contributing Guidelines
 
-There's not much to consider due to the minor complexity of the project. 
+There's not much to respect due to the minor complexity of the project. 
 
-`lib/Chemistry` contains the source files, while the other folders contain tests, scripts and some obligatory files such as readme, license etc.
+`lib/Chemistry` contains the source files, while the other folders contain tests, scripts and some obligatory files such as readme, license etc. Please consider, that the tests don't fail, because otherwise they can't get merged due to travis.
 
 ## Good luck!
 
