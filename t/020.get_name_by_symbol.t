@@ -1,7 +1,7 @@
 use v6;
 use Test;
 
-plan 6;
+plan 3;
 
 my $package = 'Chemistry::Elements';
 my $method  = 'get_name_by_symbol';
@@ -20,15 +20,24 @@ is
 	$class.get_Z_by_symbol("Br"), 35, "Br is 35";
 
 is
-	$class."$method"("Br"), 'Bromine',
+	$class."$method"("Br", 1), 'Bromine',
 	'Br is Bromine';
+
+is
+	$class."$method"("Br", 2), 'Brom',
+	'Br ist Brom';
+	
 
 is
 	$class.get_Z_by_symbol("Ne"), 10, "Ne is 10";
 
 is
-	$class.$callable("Ne"), 'Neon',
+	$class.$callable("Ne", 1), 'Neon',
 	'Ne is Neon';
+
+is
+	$class.$callable("Ne", 2), 'Neon',
+	'Ne ist Neon';
 
 done-testing;
 
