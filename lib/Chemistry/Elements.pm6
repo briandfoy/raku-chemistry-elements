@@ -164,7 +164,7 @@ class Chemistry::Elements {
 		%names{$Z}[$lang];
 		}
 	method get_name_by_symbol ( ChemicalSymbol $symbol, int $lang ) returns Str {
-		self.get_name_by_Z( self.get_Z_by_symbol( $symbol ) );
+		self.get_name_by_Z( self.get_Z_by_symbol( $symbol ), $lang );
 		}
 
 	method get_symbol_by_Z ( ZInt(Cool) $Z ) returns ChemicalSymbol {
