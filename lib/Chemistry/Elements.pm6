@@ -158,12 +158,31 @@ class Chemistry::Elements {
 		%symbol_to_name{$_}:exists or warn "<$_> is not a recognized chemical symbol";
 		};
 
-	# In the following functions $lang is used to declare the language for the query/result
+	# In the following functions $lang is used to declare the language for the query/result. 
+	# The lang_str_to_int method converts the language string to the language index.
 
-	method get_name_by_Z ( ZInt(Cool) $Z, int $lang ) returns Str {
-		%names{$Z}[$lang];
+	method lang_str_to_int (str $l) returns int {
+		given $l {
+			when "pigLat" {
+					return 0;
+				}
+			when "en" {
+					return 1;
+				}
+			when "de" {
+					return 2;
+				}
+			default {
+				return 1;
+				}
+			}
 		}
-	method get_name_by_symbol ( ChemicalSymbol $symbol, int $lang ) returns Str {
+
+	method get_name_by_Z ( ZInt(Cool) $Z, Str $lang = "default" ) returns Str {
+		%names{$Z}[self.lang_str_to_int($lang)];
+		}
+
+	method get_name_by_symbol ( ChemicalSymbol $symbol, Str $lang = "default" ) returns Str {
 		self.get_name_by_Z( self.get_Z_by_symbol( $symbol ), $lang );
 		}
 
@@ -177,7 +196,7 @@ class Chemistry::Elements {
 	method get_Z_by_symbol ( ChemicalSymbol $symbol ) returns ZInt {
 		%symbol_to_name{$symbol}:exists ?? %symbol_to_name{$symbol} !! die;
 		}
-	method get_Z_by_name ( Str $name, int $lang ) returns ZInt {
+	method get_Z_by_name ( Str $name, Str $lang = "default" ) returns ZInt {
 		die "get_Z_by_name not yet implemented";
 		}
 
