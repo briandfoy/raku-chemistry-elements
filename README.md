@@ -5,18 +5,20 @@
 The Perl 5 version of `Chemistry::Elements` was my first module, so
 I'm making it my first Perl 6 module too. It's not complicated.
 
-The module is about playing around with the periodic table of elements. A mapping between the name (latin and english), the symbol and atomic number has been implemented.
+The module maps between element names (_e.g._ Rubidium), symbol
+(_e.g._ Ru ), and number (_e.g._ 37). It's multi-language aware
+although the language switching isn't sophisticated yet.
 
 ## Copyright and License
 
-This project is under **Artistic 2.0** license. 
-About the only thing you can't do is pretend that you wrote code that you didn't. For more information look at the license file in the repository, or click on the license button next to the count of contributors.
+This project is under **Artistic 2.0** license.
 
 ## Contributing Guidelines
 
-There's not much to respect due to the minor complexity of the project. 
+Fork, edit, and pull request!
 
-`lib/Chemistry` contains the source files, while the other folders contain tests, scripts and some obligatory files such as readme, license etc. Please consider, that the tests don't fail, because otherwise they can't get merged due to travis.
+If you think you'll have big changes, create a GitHub issue and lets talk
+about it.
 
 ## Good luck!
 
