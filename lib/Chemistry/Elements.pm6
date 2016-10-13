@@ -174,7 +174,7 @@ class Chemistry::Elements {
 			when "de" {
 					return 2;
 				}
-			when "brit" {
+			when "en_UK" {
 					return 3;
 				}
 			when "ru" {
