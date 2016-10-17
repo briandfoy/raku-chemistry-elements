@@ -7,14 +7,17 @@ my $mode;
 print("This is a simplistic example for the 'Chemistry' module.\n\n");
 
 until $quit {
-    print("Please choose:\n");
-    print("\t0: Exit!\n");
-    print("\t1: atomic number -> name\n");
-    print("\t2: symbol -> name\n");
-    print("\t3: atomic number -> symbol\n");
-    print("\t4: name -> symbol\n");
-    print("\t5: name -> atomic number (Warning: not yet implemented!)\n");
-    print("\t6: symbol -> atomic number\n");
+	say q:heredoc/END/;
+Please choose:
+	0: Exit!
+	1: atomic number -> name
+	2: symbol        -> name
+	3: atomic number -> symbol
+	4: name          -> symbol
+	5: name          -> atomic number (Warning: not yet implemented!)
+	6: symbol        -> atomic number
+END
+
     $mode = prompt("");
 
     given $mode {
