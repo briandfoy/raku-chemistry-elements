@@ -4,12 +4,15 @@ class Chemistry::Elements {
 	# names has Pig Latin, English, UK English, German, Russian (so far)
 	my @language_column = (
 		'pigLatin',
-		'en' | 'en_US',
+		< en en_US default>,
 		'en_UK',
 		'de',
 		'ru',
-		);
+		)
+			==> map( { state $n = -1; $n++; slip(.flat Z=> (item $n) xx *)  } )
+			==> my %language_column;
 
+	$*ERR.say( %language_column.gist );
 	my %names = (
 		  1 => [ < Ydrogenhai      Hydrogen      Hydrogen      Wasserstoff   Водород > ],
 		  2 => [ < Eliumhai        Helium        Helium        Helium        Гелий > ],
@@ -170,19 +173,15 @@ class Chemistry::Elements {
 	# In the following functions $lang is used to declare the language for the query/result.
 	# The lang_str_to_int method converts the language string to the language index.
 
-	method lang_str_to_int (str $l) returns int {
-		return do given $l {
-			when "pigLat"       { 0 }
-			when "en" | "en_US" { 1 }
-			when "en_UK"        { 2 }
-			when "de"           { 3 }
-			when "ru"           { 4 }
-			default             { 1 }
+	method lang_str_to_column (Str $lang) returns Int {
+		return do given $lang {
+			when %language_column{$lang}:exists { %language_column{$lang} }
+			default                             { %language_column{'en'}  }
 			}
 		}
 
 	method get_name_by_Z ( ZInt(Cool) $Z, Str $lang = "default" ) returns Str {
-		%names{$Z}[self.lang_str_to_int($lang)];
+		%names{$Z}[self.lang_str_to_column($lang)];
 		}
 
 	method get_name_by_symbol ( ChemicalSymbol $symbol, Str $lang = "default" ) returns Str {
