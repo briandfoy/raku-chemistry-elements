@@ -158,7 +158,7 @@ class Chemistry::Elements {
 		%symbol_to_name{$_}:exists or warn "<$_> is not a recognized chemical symbol";
 		};
 
-	# In the following functions $lang is used to declare the language for the query/result. 
+	# In the following functions $lang is used to declare the language for the query/result.
 	# The lang_str_to_int method converts the language string to the language index.
 
 	method lang_str_to_int (str $l) returns int {
