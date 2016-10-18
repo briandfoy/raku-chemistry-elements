@@ -2,6 +2,14 @@ use v6;
 
 class Chemistry::Elements {
 	# names has Pig Latin, English, UK English, German, Russian (so far)
+	my @langs = (
+		'pigLatin',
+		'en' | 'en_US',
+		'en_UK',
+		'de',
+		'ru',
+		);
+
 	my %names = (
 		  1 => [ < Ydrogenhai      Hydrogen      Hydrogen      Wasserstoff   Водород > ],
 		  2 => [ < Eliumhai        Helium        Helium        Helium        Гелий > ],
