@@ -155,7 +155,7 @@ class Chemistry::Elements {
 	# http://stackoverflow.com/questions/39307797/can-i-return-multiple-pairs-from-a-map-feeding-into-a-hash
 
 	subset ChemicalSymbol of Str is export where {
-		%symbol_to_name{$_}:exists or warn "<$_> is not a recognized chemical symbol";
+		%symbol_to_name{$_}:exists or warn "<$_> is not a valid ChemicalSymbol";
 		};
 
 	# In the following functions $lang is used to declare the language for the query/result.
