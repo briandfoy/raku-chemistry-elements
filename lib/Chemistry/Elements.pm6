@@ -2,7 +2,7 @@ use v6;
 
 class Chemistry::Elements {
 	# names has Pig Latin, English, UK English, German, Russian (so far)
-	my @langs = (
+	my @language_column = (
 		'pigLatin',
 		'en' | 'en_US',
 		'en_UK',
