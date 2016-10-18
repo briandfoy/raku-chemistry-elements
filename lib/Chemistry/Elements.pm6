@@ -105,7 +105,7 @@ class Chemistry::Elements {
 		100 => [ < Ermiumfai       Fermium       Fermium > ],
 		101 => [ < Endeleviummai   Mendelevium   Mendelevium > ],
 		102 => [ < Obeliumnai      Nobelium      Nobelium > ],
-		103 => [ < Awerenciumlai   Lawerencium   Lawerencium > ],
+		103 => [ < Awerenciumlai   Lawrencium    Lawrencium > ],
 		104 => [ < Utherfordiumrai Rutherfordium Rutherfordium > ],
 		105 => [ < Ubniumdai       Dubnium       Dubnium > ],
 		106 => [ < Eaborgiumsai    Seaborgium    Seaborgium > ],
