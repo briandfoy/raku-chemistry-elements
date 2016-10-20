@@ -2,6 +2,8 @@ use v6;
 
 class Chemistry::Elements {
 	# names has Pig Latin, English, UK English, German, Russian (so far)
+	# there are many more files in lib/Chemistry/Languages and we should
+	# use those to build these data structures.
 	my @language_column = (
 		'pigLatin',
 		< en en_US default>,

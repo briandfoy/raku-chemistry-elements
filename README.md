@@ -20,6 +20,12 @@ Fork, edit, and pull request!
 If you think you'll have big changes, create a GitHub issue and lets talk
 about it.
 
+I'm looking at a future feature that includes the ability to translate
+between languages and things like that. If you'd like to add a language
+file, drop it in _lib/Chemistry/Languages/_. Make the first line a comment
+that lists the language codes. See _lib/Chemistry/Languages/en.txt_ for
+example.
+
 ## Good luck!
 
 Enjoy,
