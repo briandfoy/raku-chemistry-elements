@@ -134,10 +134,15 @@ class Chemistry::Elements {
 
 		);
 
+	# https://rt.perl.org/Ticket/Display.html?id=126763
+	# http://stackoverflow.com/q/40097868/2766176
 	subset ZInt of Cool is export where {
 		state ( $min, $max ) = %names.keys.sort( { $^a <=> $^b } ).[0,*-1];
 		( $_.truncate == $_ and $min <= $_ <= $max )
-			or warn "Z must be between a positive whole number from $min to $max. Got <$_>."
+			or
+		note "Expected a known atomic number between $min and $max, but got $_"
+			and
+		False;
 		};
 
 	method max_Z () returns ZInt {
@@ -166,7 +171,11 @@ class Chemistry::Elements {
 	# http://stackoverflow.com/questions/39307797/can-i-return-multiple-pairs-from-a-map-feeding-into-a-hash
 
 	subset ChemicalSymbol of Str is export where {
-		%symbol_to_name{$_}:exists or warn "<$_> is not a valid ChemicalSymbol";
+		%symbol_to_name{$_}:exists
+			or
+		note "Expected a defined ChemicalSymbol (Chemistry::Elements)." ~ " Got $_"
+			and
+		False;
 		};
 
 	# In the following functions $lang is used to declare the language for the query/result.
