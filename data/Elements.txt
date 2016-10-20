@@ -1,0 +1,120 @@
+# Pure Appl. Chem. 2016; 88(3): 265–291 (DOI 10.1515/pac-2015-0305)
+# https://www.degruyter.com/downloadpdf/j/pac.2016.88.issue-3/pac-2015-0305/pac-2015-0305.xml
+Hydrogen	H	1	1.00784,1.00811
+Helium	He	2	4.002 602(2)
+Lithium	Li	3	6.938,6.997
+Beryllium	Be	4	9.0121831(5)
+Boron	B	5	10.806,10.821
+Carbon	C	6	12.0096,12.0116
+Nitrogen	N	7	14.00643,14.00728
+Oxygen	O	8	15.99903,15.99977
+Fluorine	F	9	18.998403163(6)
+Neon	Ne	10	20.1797(6)
+Sodium	Na	11	22.989 769 28(2)
+Magnesium	Mg	12	24.304,24.307
+Aluminum	Al	13	26.9815385(7)
+Silicon	Si	14	28.084	 28.086
+Phosphorus	P	15	30.973,761998(5)
+Sulfur	S	16	32.059	 32.076
+Chlorine	Cl	17	35.446,35.457
+Argon	Ar	18	39.948(1)
+Potassium	K	19	39.0983(1)
+Calcium	Ca	20	40.078(4)
+Scandium	Sc	21	44.955908(5)
+Titanium	Ti	22	47.867(1)
+Vanadium	V	23	50.9415(1)
+Chromium	Cr	24	51.9961(6)
+Manganese	Mn	25	54.938 044(3)
+Iron	Fe	26	55.845(2)
+Cobalt	Co	27	58.933 194(4)
+Nickel	Ni	28	58.6934(4)
+Copper	Cu	29	63.546(3)
+Zinc	Zn	30	65.38(2)
+Gallium	Ga	31	69.723(1)
+Germanium	Ge	32	72.630(8)
+Arsenic	As	33	74.921 595(6)
+Selenium	Se	34	78.971(8)
+Bromine	Br	35	79.901,79.907
+Krypton	Kr	36	83.798(2)
+Rubidium	Rb	37	85.4678(3)
+Strontium	Sr	38	87.62(1)
+Yttrium	Y	39	88.905 84(2)
+Zirconium	Zr	40	91.224(2)
+Niobium	Nb	41	92.906 37(2)
+Molybdenum	Mo	42	95.95(1)
+Technetium	Tc	43	–
+Ruthenium	Ru	44	101.07(2)
+Rhodium	Rh	45	102.905 50(2)
+Palladium	Pd	46	106.42(1)
+Silver	Ag	47	107.8682(2)
+Cadmium	Cd	48	112.414(4)
+Indium	In	49	114.818(1)
+Tin	Sn	50	118.710(7)
+Antimony	Sb	51	121.760(1)
+Tellurium	Te	52	127.60(3)
+Iodine	I	53	126.904 47(3)
+Xenon	Xe	54	131.293(6)
+Cesium	Cs	55	132.905 45196(6)
+Barium	Ba	56	137.327(7)
+Lanthanum	La	57	138.90547(7)
+Cerium	Ce	58	140.116(1)
+Praseodymium	Pr	59	140.90766(2)
+Neodymium	Nd	60	144.242(3)
+Promethium	Pm	61	–
+Samarium	Sm	62	150.36(2)
+Europium	Eu	63	151.964(1)
+Gadolinium	Gd	64	157.25(3)
+Terbium	Tb	65	158.925 35(2)
+Dysprosium	Dy	66	162.500(1)
+Holmium	Ho	67	164.93033(2)
+Erbium	Er	68	167.259(3)
+Thulium	Tm	69	168.934 22(2)
+Ytterbium	Yb	70	173.054(5)
+Lutetium	Lu	71	174.9668(1)
+Hafnium	Hf	72	178.49(2)
+Tantalum	Ta	73	180.94788(2)
+Tungsten	W	74	183.84(1)
+Rhenium	Re	75	186.207(1)
+Osmium	Os	76	190.23(3)
+Iridium	Ir	77	192.217(3)
+Platinum	Pt	78	195.084(9)
+Gold	Au	79	196.966569(5)
+Mercury	Hg	80	200.592(3)
+Thallium	Tl	81	204.382,204.385
+Lead	Pb	82	207.2(1)
+Bismuth	Bi	83	208.980 40(1)
+Polonium	Po	84	–
+Astatine	At	85	–
+Radon	Rn	86	–
+Francium	Fr	87	–
+Radium	Ra	88	–
+Actinium	Ac	89	–
+Thorium	Th	90	232.0377(4)
+Protactinium	Pa	91	231.03588(2)
+Uranium	U	92	238.02891(3)
+Neptunium	Np	93	–
+Plutonium	Pu	94	–
+Americium	Am	95	–
+Curium	Cm	96	–
+Berkelium	Bk	97	–
+Californium	Cf	98	–
+Einsteinium	Es	99	–
+Fermium	Fm	100	–
+Mendelevium	Md	101	–
+Nobelium	No	102	–
+Lawrencium	Lr	103	–
+Rutherfordium	Rf	104	–
+Dubnium	Db	105	–
+Seaborgium	Sg	106	–
+Bohrium	Bh	107	–
+Hassium	Hs	108	–
+Meitnerium	Mt	109	–
+Darmstadtium	Ds	110	–
+Roentgenium	Rg	111	–
+Copernicium	Cn	112	–
+Ununtrium	Uut	113	–
+Flerovium	Fl	114	–
+Ununpentium	Uup	115	–
+Livermorium	Lv	116	–
+Ununseptium	Uus	117	–
+Ununoctium	Uuo	118	–
