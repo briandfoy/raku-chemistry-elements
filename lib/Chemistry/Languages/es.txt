@@ -1,3 +1,4 @@
+# es
 Hidrógeno
 Helio
 Litio
@@ -46,13 +47,13 @@ Rodio
 Paladio
 Plata
 Cadmio
-Indio	
-Estaño	
-Antimonio	
-Teluro	
+Indio
+Estaño
+Antimonio
+Teluro
 Yodo
-Xenón	
-Cesio	
+Xenón
+Cesio
 Barioa
 Lantano
 Cerio
