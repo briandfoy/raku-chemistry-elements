@@ -12,7 +12,6 @@ class Chemistry::Elements {
 			==> map( { state $n = -1; $n++; slip(.flat Z=> (item $n) xx *)  } )
 			==> my %language_column;
 
-	$*ERR.say( %language_column.gist );
 	my %names = (
 		  1 => [ < Ydrogenhai      Hydrogen      Hydrogen      Wasserstoff   Водород > ],
 		  2 => [ < Eliumhai        Helium        Helium        Helium        Гелий > ],
