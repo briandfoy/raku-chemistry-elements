@@ -1,5 +1,50 @@
 use v6;
 
+=begin pod
+
+=head1 NAME
+
+Chemistry::Elements - do things with the Periodic Table
+
+=head1 SYNOPSIS
+
+=begin code
+
+use Chemistry::Elements;
+
+put "Name for 37 is ", get_name_by_Z( 37 );
+put "Name for Rb is ", get_name_by_symbol( 'Rb' );
+
+put "Symbol for 37 is ", get_symbol_by_Z( 37 );
+put "Symbol for Rubidium is ", get_symbol_by_name( 'Rubidium' );
+put "Symbol for Rubidium is ", get_symbol_by_name( 'Rubidium',  );
+
+put "Atomic number for Rb is ", get_Z_by_symbol( 'Rb' );
+put "Atomic number for Rubidium", get_Z_by_name( 'Rubidium' );
+
+# use a German name
+put "Atomic number for Rubidium is ", get_symbol_by_name( 'Schwefel', 'de'  );
+
+# Use some types
+
+my ZInt $Z    = 37; # works
+my ZInt $BigZ = 138; # nope, because that's not on the chart (yet)
+my $minimum = min_Z(); # Always 1, unless something big changes
+my $maximum = max_Z(); # More
+
+my ChemicalSymbol $symbol       = 'Rb'; # okay
+my ChemicalSymbol $other_symbol = 'X9'; # not okay, not a known symbol
+
+=end code
+
+=head1 DESCRIPTION
+
+=end pod
+
+#|{
+Do various things with chemical elements. Convert between symbols, names,
+and atomic numbers.
+	}
 class Chemistry::Elements {
 	# names has Pig Latin, English, UK English, German, Russian (so far)
 	# there are many more files in lib/Chemistry/Languages and we should
@@ -138,6 +183,9 @@ class Chemistry::Elements {
 
 	# https://rt.perl.org/Ticket/Display.html?id=126763
 	# http://stackoverflow.com/q/40097868/2766176
+	#|{
+	A Str that is one of the known chemical symbols
+	}
 	subset ZInt of Cool is export where {
 		state ( $min, $max ) = %names.keys.sort( { $^a <=> $^b } ).[0,*-1];
 		( $_.truncate == $_ and $min <= $_ <= $max )
@@ -147,11 +195,13 @@ class Chemistry::Elements {
 		False;
 		};
 
+	#|{ Return the maximum recognized atomic number (as a ZInt type). }
 	method max_Z () returns ZInt {
 		state $max = %names.keys.sort( { $^b <=> $^a } ).[0];
 		$max;
 		}
 
+	#|{ Return the minimum recognized atomic number. This is always be 1 (as a ZInt type). }
 	method min_Z () returns ZInt {
 		state $min = %names.keys.sort( { $^a <=> $^b } ).[0];
 		$min;
@@ -171,7 +221,9 @@ class Chemistry::Elements {
 
 	# I could perhaps use Z=> above
 	# http://stackoverflow.com/questions/39307797/can-i-return-multiple-pairs-from-a-map-feeding-into-a-hash
-
+	#|{
+	A Str that is one of the known chemical symbols
+	}
 	subset ChemicalSymbol of Str is export where {
 		%symbol_to_name{$_}:exists
 			or
@@ -190,26 +242,80 @@ class Chemistry::Elements {
 			}
 		}
 
+	#|{
+	Return the element name by the atomic number. You can pass an untyped
+	number or a ZInt
+	}
 	method get_name_by_Z ( ZInt(Cool) $Z, Str $lang = "default" ) returns Str {
 		%names{$Z}[self.lang_str_to_column($lang)];
 		}
 
+	#|{
+	Return the element name (as a Str) by the ChemicalSymbol. You can provide a second
+	argument to choose the language.
+	}
 	method get_name_by_symbol ( ChemicalSymbol $symbol, Str $lang = "default" ) returns Str {
 		self.get_name_by_Z( self.get_Z_by_symbol( $symbol ), $lang );
 		}
 
+	#|{
+	Return the chemical symbol (as a ChemicalSymbol type) by
+	the atomic number.
+	}
 	method get_symbol_by_Z ( ZInt(Cool) $Z ) returns ChemicalSymbol {
 		@elements[$Z - 1].Str;
 		}
+	#|{
+	Return the chemical symbol (as a ChemicalSymbol object) by
+	the element name.
+	}
 	method get_symbol_by_name ( Str $name ) returns ChemicalSymbol {
 		self.get_symbol_by_Z( self.get_Z_by_name( $name ) );
 		}
 
+	#|{
+	Return the atomic number (as a ZInt type) by the ChemicalSymbol.
+	}
 	method get_Z_by_symbol ( ChemicalSymbol $symbol ) returns ZInt {
 		%symbol_to_name{$symbol}:exists ?? %symbol_to_name{$symbol} !! die;
 		}
+
+	#|{
+	Return the atomic number (as a ZInt type) by the element name.
+	}
 	method get_Z_by_name ( Str $name, Str $lang = "default" ) returns ZInt {
 		die "get_Z_by_name not yet implemented";
 		}
 
 	}
+
+=begin pod
+
+=head1 TO DO
+
+=item Integrate the other languages in the F<Lib/Languages> directory.
+
+=item Guess the langauge based on a name or symbol
+
+=item Allow historical symbols that aren't
+
+=head1 SEE ALSO
+
+=head1 SOURCE AVAILABILITY
+
+This module is in Github:
+
+	https://github.com/briandfoy/perl6-chemistry-elements
+
+=head1 AUTHOR
+
+brian d foy, C<< <bdfoy@cpan.org> >>
+
+=head1 COPYRIGHT AND LICENSE
+
+Copyright © 2016, brian d foy <bdfoy@cpan.org>. All rights reserved.
+
+This program is free software; you can redistribute it and/or modify
+it under the Artistic License 2.0.
+
+=end pod
