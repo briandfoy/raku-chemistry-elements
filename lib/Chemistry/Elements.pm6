@@ -172,12 +172,12 @@ class Chemistry::Elements {
 		110 => [ < Armstadtiumdai  Darmstadtium  Darmstadtium  Darmstadtium  Дармштадтий > ],
 		111 => [ < Oentgeniumrai   Roentgenium   Roentgenium   Roentgenium   Рентгений > ],
 		112 => [ < Operniciumcai   Copernicium   Copernicium   Copernicium   Коперниций > ],
-		113 => [ < Nuntriumuai     Ununtrium     Ununtrium     Ununtrium     Нихоний > ],     # Nihonium (Nh)
+		113 => [ < Ihoniumnai      Nihonium      Nihonium      Nihonium      Нихоний > ],
 		114 => [ < Leroviumfai     Flerovium     Flerovium     Flerovium     Флеровий > ],
-		115 => [ < Nunpentiumuai   Ununpentium   Ununpentium   Ununpentium   Московий > ], # Moscovium (Mc)
+		115 => [ < Oscoviummai     Moscovium     Moscovium     Moscovium     Московий > ],
 		116 => [ < Ivermoriumlai   Livermorium   Livermorium   Livermorium   Ливерморий > ],
-		117 => [ < Nunseptiumuai   Ununseptium   Ununseptium   Ununseptium   Теннессин > ], # Tennessine (Ts)
-		118 => [ < Nunoctiumuai    Ununoctium    Ununoctium    Ununoctium    Оганесон > ],   # Oganesson (Og)
+		117 => [ < Ennessinetai    Tennessine    Tennessine    Tennessine    Теннессин > ],
+		118 => [ < Ganessonoai     Oganesson     Oganesson     Oganesson     Оганесон > ],
 
 		);
 
