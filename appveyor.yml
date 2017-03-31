@@ -14,8 +14,10 @@ install:
   - '"C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd" /x64'
   - choco install strawberryperl
   - SET PATH=C:\strawberry\c\bin;C:\strawberry\perl\site\bin;C:\strawberry\perl\bin;%PATH%
+  - ps: refreshenv
   - ps: Start-FileDownload 'http://rakudo.org/downloads/star/rakudo-star-latest-x86_64%20(JIT).msi' -FileName 'rakudo.msi'
   - dir
+  - perl -MDigest::MD5=md5_hex -le "print md5_hex( do{local $/;<>} )" rakudo.msi
   - ps: msiexec /i rakudo.msi /quiet /qn /norestart /log install.log
   - SET PATH=C:\rakudo\bin;C:\rakudo\share\perl6\site\bin;%PATH%
   - ps: refreshenv
@@ -27,3 +29,6 @@ test_script:
   - prove -v -e "perl6 -Ilib" t/
 
 shallow_clone: true
+
+
+# http://codegists.com/snippet/yaml/appveyoryml_martimm_yaml
