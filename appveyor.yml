@@ -18,7 +18,7 @@ install:
   - ps: Start-FileDownload 'http://rakudo.org/downloads/star/rakudo-star-latest-x86_64%20(JIT).msi' -FileName 'rakudo.msi'
   - dir
   - perl -MDigest::MD5=md5_hex -le "print md5_hex( do{local $/;<>} )" rakudo.msi
-  - ps: msiexec /i rakudo.msi /quiet /qn /norestart /log install.log
+  - ps: msiexec /i rakudo.msi /qn /norestart /log install.log
   - SET PATH=C:\rakudo\bin;C:\rakudo\share\perl6\site\bin;%PATH%
   - ps: refreshenv
 
