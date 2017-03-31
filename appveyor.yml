@@ -13,6 +13,7 @@ install:
   - ps: Start-FileDownload 'http://rakudo.org/downloads/star/rakudo-star-latest-x86_64%20(JIT).msi' -FileName 'rakudo.msi'
   - dir
   - ps: Start-Process -FilePath msiexec -ArgumentList /i, 'rakudo.msi'
+  - SET PATH=C:\rakudo\bin;%PATH%
 
 build: off
 
