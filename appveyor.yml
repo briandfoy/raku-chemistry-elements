@@ -3,8 +3,8 @@ os: Visual Studio 2015
 platform: x64
 
 cache:
-    - C:\strawberry
-    - C:\rakudo
+    - C:\Strawberry
+    - C:\Rakudo
 
 branches:
   only:
@@ -12,7 +12,7 @@ branches:
 
 install:
   - '"C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd" /x64'
-  - choco install strawberryperl
+  - if not exist "C:\Strawberry" cinst strawberryperl
   - SET PATH=C:\strawberry\c\bin;C:\strawberry\perl\site\bin;C:\strawberry\perl\bin;%PATH%
   - ps: refreshenv
   - ps: Start-FileDownload 'http://rakudo.org/downloads/star/rakudo-star-latest-x86_64%20(JIT).msi' -FileName 'rakudo.msi'
