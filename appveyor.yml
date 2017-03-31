@@ -19,6 +19,7 @@ install:
   - dir
   - perl -MDigest::MD5=md5_hex -le "print md5_hex( do{local $/;<>} )" rakudo.msi
   - ps: msiexec /i rakudo.msi /qn /norestart /log install.log
+  - dir C:\
   - SET PATH=C:\rakudo\bin;C:\rakudo\share\perl6\site\bin;%PATH%
   - ps: refreshenv
 
