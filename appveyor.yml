@@ -2,12 +2,16 @@ os: Visual Studio 2015
 
 platform: x64
 
+cache:
+    - C:\strawberry
+    - C:\rakudo
+
 install:
   - '"C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd" /x64'
   - choco install strawberryperl
   - SET PATH=C:\strawberry\c\bin;C:\strawberry\perl\site\bin;C:\strawberry\perl\bin;%PATH%
   - ps: Start-FileDownload 'http://rakudo.org/downloads/star/rakudo-star-latest-x86_64%20(JIT).msi'
-  - msiexec 'rakudo-star-latest-x86_64%20(JIT).msi'
+  - msiexec /i 'rakudo-star-latest-x86_64%20(JIT).msi'
 
 build: off
 
