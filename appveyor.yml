@@ -2,7 +2,7 @@ skip_tags: true
 cache:
   - C:\rakudo
 install:
-  - appveyor DownloadFile http://rakudo.org/downloads/star/rakudo-star-latest-x86_64%20(JIT).msi
+  - appveyor DownloadFile "http://rakudo.org/downloads/star/rakudo-star-latest-x86_64%20(JIT).msi"
 build_script:
   - perl6 -v
 build: off
