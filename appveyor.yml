@@ -16,9 +16,10 @@ install:
   - SET PATH=C:\strawberry\c\bin;C:\strawberry\perl\site\bin;C:\strawberry\perl\bin;%PATH%
   - ps: refreshenv
   - ps: Start-FileDownload 'http://rakudo.org/downloads/star/rakudo-star-latest-x86_64%20(JIT).msi' -FileName 'rakudo.msi'
-  - dir
   - ps: get-filehash -algorithm md5 rakudo.msi
   - ps: msiexec /i rakudo.msi /qn /norestart /log install.log
+  - dir
+  - ps: get-content -Path install.log
   - dir C:\
   - SET PATH=C:\rakudo\bin;C:\rakudo\share\perl6\site\bin;%PATH%
   - ps: refreshenv
@@ -26,8 +27,9 @@ install:
 build: off
 
 test_script:
-  - perl6 -Ilib bin/zef --verbose install .
-  - prove -v -e "perl6 -Ilib" t/
+  - perl6 -v
+#  - perl6 -Ilib bin/zef --verbose install .
+#  - prove -v -e "perl6 -Ilib" t/
 
 shallow_clone: true
 
