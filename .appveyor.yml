@@ -1,35 +1,108 @@
+# An experimental AppVeyor config to install Strawberry Perl and
+# Rakudo Star. Once installed, AppVeyor caches those for use next time.
+#
+# I specifically don't build Rakudo from GitHub because I want to use
+# the "normal people" release.
+
+
+# AppVeyor environment variables: https://www.appveyor.com/docs/environment-variables/
+
 os: Visual Studio 2015
 
 platform: x64
 
+# clearing the cache: https://github.com/appveyor/ci/issues/985
+# change .appveyor_clear_cache.txt to invalidate cache
+#
+# If the build is successful, AppVeyor caches these files and
+# directories for future builds
 cache:
-    - C:\Strawberry
-    - C:\Rakudo
+    - C:\Strawberry -> .appveyor_clear_cache.txt
+    - C:\Rakudo -> .appveyor_clear_cache.txt
 
 branches:
   only:
     - master
 
+# set your own environment variables here.
+#
+# Perl 5's Test::Harness has several env variables (many appear as prove switches)
+#   https://metacpan.org/pod/Test::Harness
+
+environment:
+    MY_VAR: true
+    MSIEXEC_WAIT_SECONDS: 10
+    AUTOMATED_TESTING: 1
+    TEST_VERBOSE: 0
+    HARNESS_OPTIONS:
+    HARNESS_VERBOSE: 0
+    HARNESS_TIMER: 1
+    HARNESS_PERL_SWITCHES: -MDevel::Cover
+
 install:
-  - '"C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd" /x64'
+  # Install Strawberry Perl with chocolately.
+  # Strawberry Perl comes with `prove`, which we use to run the tests.
+  # http://strawberryperl.com
+  # https://chocolatey.org/packages/StrawberryPerl
   - if not exist "C:\Strawberry" cinst strawberryperl
   - SET PATH=C:\strawberry\c\bin;C:\strawberry\perl\site\bin;C:\strawberry\perl\bin;%PATH%
   - ps: refreshenv
-  - ps: Start-FileDownload 'http://rakudo.org/downloads/star/rakudo-star-latest-x86_64%20(JIT).msi' -FileName 'rakudo.msi'
-  - dir
-  - ps: get-filehash -algorithm md5 rakudo.msi
-  - ps: msiexec /i rakudo.msi /qn /norestart /log install.log
-  - dir C:\
+  # I wish there was an up-to-date chocolately package for Rakudo
+  # https://chocolatey.org/packages/rakudostar/2014.12.1
+  # https://github.com/MadcapJake/chocolatey-packages
+  #
+  # multiline must be indented to the same column as the |. Only spaces!
+  #
+  # Start-Process for msiexec doesn't work because the -Wait doesn't
+  # know about the external msiexec. It returns right away.
+  # https://blogs.msdn.microsoft.com/heaths/2005/11/15/waiting-for-msiexec-exe-to-finish/
+  #
+  # The external msiexec process needs some time to work, so sleep a bit.
+  # By trial and error, I think the installation time is about 4 seconds.
+  - ps: |
+        if ( ! (Test-Path C:\Rakudo) )
+        {
+          Set-Location -Path "$env:APPVEYOR_BUILD_FOLDER\.."
+          Write-Host (Get-Item -Path ".\" -Verbose).FullName
+          Start-FileDownload 'http://rakudo.org/downloads/star/rakudo-star-latest-x86_64%20(JIT).msi' -FileName 'rakudo.msi'
+          get-filehash -algorithm md5 'rakudo.msi'
+          msiexec /i rakudo.msi /quiet /qn /norestart /log rakudo-install.log
+          Write-Host "Waiting $env:MSIEXEC_WAIT_SECONDS seconds for msiexec to finish"
+          Write-Host "Set MSIEXEC_WAIT_SECONDS to change that wait period"
+          Start-Sleep -s $env:MSIEXEC_WAIT_SECONDS
+          type rakudo-install.log
+        }
   - SET PATH=C:\rakudo\bin;C:\rakudo\share\perl6\site\bin;%PATH%
   - ps: refreshenv
+  - perl6 -v
+  # probably want to install zef as a group of steps
+  # Anything zef installs becomes part of the cached Rakudo at the end
+  # With 2017.01, zef already comes with Rakudo Star so I probably don't
+  # need to do this. Still, we'll get the freshest one.
+  - git clone https://github.com/ugexe/zef %APPVEYOR_BUILD_FOLDER%\..\zef
+  - cd %APPVEYOR_BUILD_FOLDER%\..\zef
+  - perl6 -Ilib bin/zef install .
+  # install the target distribution's dependencies. You'll need to
+  # maintain your META6.json file in the top-level directory
+  - zef --verbose install .
+  # change back to the target project's clone folder.
+  # Now we should be ready to run the tests
+  - cd %APPVEYOR_BUILD_FOLDER%
 
 build: off
 
+# many of the settings in `environment` affect what happens in the test script
+#
+# I'd like to run Devel::Cover and submit to Coveralls too.
 test_script:
-  - perl6 -Ilib bin/zef --verbose install .
   - prove -v -e "perl6 -Ilib" t/
 
 shallow_clone: true
 
-
-# http://codegists.com/snippet/yaml/appveyoryml_martimm_yaml
+# Other Perl 6 AppVeyor configs
+#   https://gist.github.com/ugexe/e95307a3a606df83fdcb
+#   https://gist.github.com/MARTIMM/b0cc86cec30dbcabf6e9732a53879dbb/
+#   https://github.com/perl6/atom-language-perl6/blob/master/appveyor.yml
+#   https://github.com/azawawi/perl6-opencv/blob/master/appveyor.yml
+#   https://github.com/ugexe/Perl6-Distribution--Common--Remote/blob/master/.appveyor.yml
+#   https://github.com/azawawi/perl6-net-curl/blob/master/appveyor.yml
