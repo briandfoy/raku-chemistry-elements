@@ -2,6 +2,11 @@
 
 # The Chemistry::Elements Perl 6 module
 
+[![AppVeyor status](https://ci.appveyor.com/api/projects/status/8n2etseuqajcv48m?svg=true)](https://ci.appveyor.com/project/briandfoy/perl6-chemistry-elements)
+
+[![Travis status](https://travis-ci.org/briandfoy/perl6-chemistry-elements.svg?branch=master)](https://travis-ci.org/briandfoy/perl6-chemistry-elements)
+
+
 The Perl 5 version of `Chemistry::Elements` was my first module, so
 I'm making it my first Perl 6 module too. It's not complicated.
 
