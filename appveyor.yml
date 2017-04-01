@@ -17,9 +17,9 @@ install:
   - ps: refreshenv
   - ps: Start-FileDownload 'http://rakudo.org/downloads/star/rakudo-star-latest-x86_64%20(JIT).msi' -FileName 'rakudo.msi'
   - ps: get-filehash -algorithm md5 rakudo.msi
-  - ps: msiexec /i rakudo.msi /qn /norestart /log install.log
+  - ps: msiexec /i rakudo.msi /qn /norestart /log C:\projects\perl6-chemistry-elements\install.log
   - dir
-  - ps: get-content -Path install.log
+  - ps: get-content -Path C:\projects\perl6-chemistry-elements\install.log
   - dir C:\
   - SET PATH=C:\rakudo\bin;C:\rakudo\share\perl6\site\bin;%PATH%
   - ps: refreshenv
