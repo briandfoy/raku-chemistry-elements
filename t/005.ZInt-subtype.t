@@ -1,6 +1,8 @@
 use v6;
 use Test;
 
+use Chemistry::Elements;
+
 my $package = 'Chemistry::Elements';
 
 use Chemistry::Elements;

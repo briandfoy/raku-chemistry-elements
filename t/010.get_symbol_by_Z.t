@@ -3,6 +3,8 @@ use Test;
 
 plan 11;
 
+use Chemistry::Elements;
+
 my $package = 'Chemistry::Elements';
 my $method  = 'get_symbol_by_Z';
 

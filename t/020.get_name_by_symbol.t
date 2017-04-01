@@ -3,6 +3,8 @@ use Test;
 
 plan 8;
 
+use Chemistry::Elements;
+
 my $package = 'Chemistry::Elements';
 my $method  = 'get_name_by_symbol';
 
@@ -26,7 +28,7 @@ is
 is
 	$class."$method"("Br", "de"), 'Brom',
 	'Br ist Brom';
-	
+
 
 is
 	$class.get_Z_by_symbol("Ne"), 10, "Ne is 10";
