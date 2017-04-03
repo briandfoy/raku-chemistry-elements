@@ -1,13 +1,11 @@
 use v6;
 use Test;
 
-use Chemistry::Elements;
+constant package-name = 'Chemistry::Elements';
+use-ok package-name or bail-out "{package-name} did not compile";
+use ::(package-name);
+my $class = ::(package-name);
 
-my $package = 'Chemistry::Elements';
-
-use-ok $package;
-
-my $class = ::($package);
 can-ok $class, 'lang_str_to_column';
 
 my @tests = (

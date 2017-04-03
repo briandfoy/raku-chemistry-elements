@@ -1,18 +1,12 @@
 use v6;
 use Test;
 
-plan 8;
+constant package-name = 'Chemistry::Elements';
+use-ok package-name or bail-out "{package-name} did not compile";
+use ::(package-name);
+my $class = ::(package-name);
 
-use Chemistry::Elements;
-
-my $package = 'Chemistry::Elements';
 my $method  = 'get_name_by_symbol';
-
-use-ok $package;
-
-# need to load the package first
-# this is a Type object ::(...)
-my $class = ::($package);
 
 can-ok $class, $method;
 
