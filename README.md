@@ -4,7 +4,7 @@
 
 [![Travis status](https://travis-ci.org/briandfoy/perl6-chemistry-elements.svg?branch=master)](https://travis-ci.org/briandfoy/perl6-chemistry-elements)
 
-[![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/briandfoy/ghojo/blob/master/LICENSE)
+[![License](https://img.shields.io/github/license/briandfoy/perl6-chemistry-elements.svg)](https://github.com/briandfoy/ghojo/blob/master/LICENSE)
 
 The Perl 5 version of `Chemistry::Elements` was my first module, so
 I'm making it my first Perl 6 module too. It's not complicated.
