@@ -1,9 +1,10 @@
 use v6;
 use Test;
 
-my $package = 'Chemistry::Elements';
-
-use Chemistry::Elements;
+constant package-name = 'Chemistry::Elements';
+use-ok package-name or bail-out "{package-name} did not compile";
+use ::(package-name);
+my $class = ::(package-name);
 
 lives-ok { my ZInt $Z = 50 },
 	"Can assign positive whole number to ZInt";

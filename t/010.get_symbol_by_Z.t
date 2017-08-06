@@ -3,15 +3,12 @@ use Test;
 
 plan 11;
 
-my $package = 'Chemistry::Elements';
+constant package-name = 'Chemistry::Elements';
+use-ok package-name or bail-out "{package-name} did not compile";
+use ::(package-name);
+my $class = ::(package-name);
+
 my $method  = 'get_symbol_by_Z';
-
-use-ok $package;
-
-# need to load the package first
-# this is a Type object ::(...)
-my $class = ::($package);
-
 can-ok $class, $method;
 
 my $callable = $class.^find_method( $method );

@@ -1,12 +1,11 @@
 use v6;
 use Test;
 
-my $package = 'Chemistry::Elements';
+constant package-name = 'Chemistry::Elements';
+use-ok package-name or bail-out "{package-name} did not compile";
+use ::(package-name);
+my $class = ::(package-name);
 
-use-ok $package;
-use Chemistry::Elements;
-
-my $class = ::($package);
 can-ok $class, 'min_Z';
 can-ok $class, 'max_Z';
 
