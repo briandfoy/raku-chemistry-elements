@@ -1,6 +1,6 @@
 # The Chemistry::Elements Perl 6 module
 
-[![AppVeyor status](https://ci.appveyor.com/api/projects/status/m7fjcqjmoue0wssu/branch/master?svg=true)](https://ci.appveyor.com/project/briandfoy/perl6-chemistry-elements) [![Travis status](https://travis-ci.org/briandfoy/perl6-chemistry-elements.svg?branch=master)](https://travis-ci.org/briandfoy/perl6-chemistry-elements) [![License](https://img.shields.io/github/license/briandfoy/perl6-chemistry-elements.svg)](https://github.com/briandfoy/ghojo/blob/master/LICENSE)
+[![AppVeyor status](https://ci.appveyor.com/api/projects/status/m7fjcqjmoue0wssu/branch/master?svg=true)](https://ci.appveyor.com/project/briandfoy/perl6-chemistry-elements) [![Travis status](https://travis-ci.org/briandfoy/perl6-chemistry-elements.svg?branch=master)](https://travis-ci.org/briandfoy/perl6-chemistry-elements) [![artistic2](https://img.shields.io/badge/license-Artistic%202.0-blue.svg?style=flat)](https://opensource.org/licenses/Artistic-2.0)
 
 The Perl 5 version of `Chemistry::Elements` was my first module, so
 I'm making it my first Perl 6 module too. It's not complicated.
