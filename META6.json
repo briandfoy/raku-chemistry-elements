@@ -16,7 +16,7 @@
 "test-depends": [
 	"Test"
 	],
-"version": "0.001002",
+"version": "0.001003",
 "tags": [ "chemistry", "Z", "atomic number" ],
 "source-url" : "git@github.com:briandfoy/perl6-chemistry-elements.git"
 }
