@@ -1,6 +1,6 @@
 # The Chemistry::Elements Perl 6 module
 
-[![AppVeyor status](https://ci.appveyor.com/api/projects/status/8n2etseuqajcv48m?svg=true)](https://ci.appveyor.com/project/briandfoy/perl6-chemistry-elements)
+[![AppVeyor status](https://ci.appveyor.com/api/projects/status/m7fjcqjmoue0wssu/branch/master?svg=true)](https://ci.appveyor.com/project/briandfoy/perl6-chemistry-elements)
 
 [![Travis status](https://travis-ci.org/briandfoy/perl6-chemistry-elements.svg?branch=master)](https://travis-ci.org/briandfoy/perl6-chemistry-elements)
 
