@@ -14,7 +14,8 @@
 	"source": "https://github.com/briandfoy/perl6-chemistry-elements"
 	},
 "test-depends": [
-	"Test"
+	"Test",
+	"Test::META"
 	],
 "version": "0.001003",
 "tags": [ "chemistry", "Z", "atomic number" ],
