@@ -45,7 +45,7 @@ my ChemicalSymbol $other_symbol = 'X9'; # not okay, not a known symbol
 Do various things with chemical elements. Convert between symbols, names,
 and atomic numbers.
 	}
-class Chemistry::Elements {
+class Chemistry::Elements:auth<github:briandfoy>:ver<0.001003> {
 	# names has Pig Latin, English, UK English, German, Russian (so far)
 	# there are many more files in lib/Chemistry/Languages and we should
 	# use those to build these data structures.
