@@ -18,6 +18,7 @@ addons:
 
 # https://docs.travis-ci.com/user/installing-dependencies/#Installing-Packages-without-an-APT-Repository
 before_install:
+  - perl6 -v
   - cd ${TMPDIR}
   # https://github.com/ugexe/zef
   - git clone https://github.com/ugexe/zef.git && cd zef && perl6 -Ilib bin/zef install .
