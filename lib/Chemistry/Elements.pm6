@@ -305,7 +305,7 @@ class Chemistry::Elements:auth<github:briandfoy>:ver<0.001003> {
 
 This module is in Github:
 
-	https://github.com/briandfoy/perl6-chemistry-elements
+	https://github.com/briandfoy/raku-chemistry-elements
 
 =head1 AUTHOR
 
