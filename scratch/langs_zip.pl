@@ -1,4 +1,4 @@
-#!/Users/brian/.rakudobrew/bin/perl6
+#!raku
 
 my @array = < a b c d >
 	==> map( { $_ => 1 } )
