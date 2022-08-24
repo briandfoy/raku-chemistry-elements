@@ -3,7 +3,7 @@
 	"brian d foy"
 	],
 "depends": [],
-"description": "Perl 6 extension for working with the Periodic Table of Elements",
+"description": "Raku extension for working with the Periodic Table of Elements",
 "name": "Chemistry::Elements",
 "perl": "6.c",
 "license": "Artistic-2.0",
@@ -11,7 +11,7 @@
 	"Chemistry::Elements": "lib/Chemistry/Elements.pm6"
 	},
 "support": {
-	"source": "https://github.com/briandfoy/perl6-chemistry-elements.git"
+	"source": "https://github.com/briandfoy/raku-chemistry-elements.git"
 	},
 "test-depends": [
 	"Test",
@@ -19,5 +19,5 @@
 	],
 "version": "0.001003",
 "tags": [ "chemistry", "Z", "atomic number" ],
-"source-url" : "https://github.com/briandfoy/perl6-chemistry-elements.git"
+"source-url" : "https://github.com/briandfoy/raku-chemistry-elements.git"
 }
